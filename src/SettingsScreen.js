@@ -16,13 +16,15 @@ const SettingsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
-    backgroundColor:'gray',
+    padding: 8,
+    backgroundColor:'white',
   },
   option: {
     fontSize: 18,
     marginVertical: 10,
-    color:'#ffffff'
+    color:'black',
+    borderBottomWidth: 1,
+    borderBottomColor:'black'
   },
 });
 

@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, Image, ImageBackground } from 'react-native';
-import { Button } from 'react-native-elements';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Image,
+  ImageBackground,
+} from 'react-native';
+import {Button} from 'react-native-elements';
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,32 +19,32 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-    <ImageBackground
+      <ImageBackground
         source={require('./assets/Login.jpg')} // Ensure this path is correct
         style={styles.background}>
-      
-      <Image source={require('./assets/App-icon.jpg')} style={styles.logo} />
-      <Text style={styles.welcomeText}>Welcome</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Username"
-        value={username}
-        placeholderTextColor="#ffffff"
-        onChangeText={setUsername}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        placeholderTextColor="#ffffff"
-        onChangeText={setPassword}
-      />
-      <Button 
-      title="Login"
-      buttonStyle={styles.button}
-      titleStyle={styles.buttonText}
-      onPress={handleLogin} />
+        <Image source={require('./assets/App-icon.jpg')} style={styles.logo} />
+        <Text style={styles.welcomeText}>Welcome</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Username"
+          value={username}
+          placeholderTextColor="#ffffff"
+          onChangeText={setUsername}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          secureTextEntry
+          value={password}
+          placeholderTextColor="#ffffff"
+          onChangeText={setPassword}
+        />
+        <Button
+          title="Login"
+          buttonStyle={styles.button}
+          titleStyle={styles.buttonText}
+          onPress={handleLogin}
+        />
       </ImageBackground>
     </View>
   );
@@ -50,7 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '100%',
-    opacity:0.7
+    opacity: 0.7,
   },
   container: {
     flex: 1,
@@ -66,7 +73,7 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 24,
     marginBottom: 20,
-    color: "black"
+    color: 'black',
   },
   input: {
     width: '80%',
@@ -79,22 +86,20 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'black',
-    width: "65%",
+    width: '65%',
     borderRadius: 20, // Adjust the value to get the desired roundness
     paddingVertical: 10,
     paddingHorizontal: 20,
     alignItems: 'center', // Center the text horizontally
     justifyContent: 'center', // Center the text vertically
-
   },
   buttonText: {
     fontSize: 16,
-    width: "90%",
+    width: '90%',
     fontWeight: 'bold',
     justifyContent: 'center',
     alignItems: 'center',
   },
-
 });
 
 export default LoginScreen;

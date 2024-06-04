@@ -43,14 +43,14 @@ const ProfileScreen = ({ navigation }) => {
           style={styles.radioButton}
           onPress={() => setGender('Male')}
         >
-          <Text style={{ marginRight: 5 , color:'#FFFFFF'}}>Male</Text>
+          <Text style={{ marginRight: 5 , color:'black'}}>Male</Text>
           <Text style={{ color:'#AB2CBF'}}>{gender === 'male' ? '🔘' : '⚪'}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.radioButton}
           onPress={() => setGender('female')}
         >
-          <Text style={{ marginRight: 5 ,color:'#FFFFFF'}}>Female</Text>
+          <Text style={{ marginRight: 5 ,color:'black'}}>Female</Text>
           <Text style={{ color:'#AB2CBF'}}>{gender === 'female' ? '🔘' : '⚪'}</Text>
         </TouchableOpacity>
       </View>
@@ -214,6 +214,9 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 40,
     marginBottom: 20,
+    borderWidth: 1,
+    borderRadius: 10,
+    color: 'black'
   },
   modalContainer: {
     flex: 1,

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 import axios from 'axios';
 
 const DashboardScreen = () => {
@@ -7,16 +7,17 @@ const DashboardScreen = () => {
 
   useEffect(() => {
     // Fetch quotes from the Quotable API
-    axios.get('https://api.quotable.io/quotes?limit=50') // Adjust the limit as needed
-      .then((response) => {
+    axios
+      .get('https://api.quotable.io/quotes?limit=50') // Adjust the limit as needed
+      .then(response => {
         setQuotes(response.data.results);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error('Error fetching quotes:', error);
       });
   }, []);
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({item}) => (
     <View style={styles.card}>
       <Text style={styles.subtitle}>{item.author}</Text>
       <Text style={styles.body}>{item.content}</Text>
@@ -35,7 +36,7 @@ const DashboardScreen = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 24,
-    backgroundColor:'white',
+    backgroundColor: 'white',
     justifyContent: 'center',
   },
   card: {
@@ -52,12 +53,12 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#574E59'
+    color: '#574E59',
   },
-  body:{
+  body: {
     fontSize: 14,
-    color: '#574E59'
-  }
+    color: '#574E59',
+  },
 });
 
 export default DashboardScreen;
